@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Courgette|Open+Sans&display=swap&subset=latin-ext");
+
+html {
+	font-size: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: geometricPrecision;
+}
+
+body {
+	font-family: $opensans;
+	font-weight: 400;
+	color: $black;
+	line-height: 1.5;
+}

@@ -1,0 +1,35 @@
+==
+<?php
+function onInit()
+{
+    $themePath = 'themes/' . $this->theme->getDirName();
+    $this->layout['styles'] = url(mix('assets/css/styles.css', $themePath));
+    $this->layout['scripts'] = url(mix('assets/js/scripts.js', $themePath));
+}
+?>
+==
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>{{ this.page.title }}</title>
+
+		<meta name="title" content="{{ this.page.meta_title }}" />
+		<meta name="description" content="{{ this.page.meta_description }}" />
+
+		<link href="{{ this.layout.styles }}" rel="stylesheet" />
+		{% styles %}
+	</head>
+
+	<body class="{{ this.page.bodyClass }}">
+		<div id="">
+			{% partial 'header' %} {% page %} {% partial 'footer' %}
+		</div>
+
+		<script src="{{ this.layout.scripts }}"></script>
+		{% framework extras %} {% scripts %}
+	</body>
+</html>
